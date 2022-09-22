@@ -17,6 +17,18 @@ export default async (event) => {
         FastSigning,
       })
     }
+    else
+      return {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        version: VERSION,
+        FastSigning,
+      })
+    }
+
 
     const body = JSON.parse(event.body)
     const { HORIZON_URL, STELLAR_NETWORK } = body // Global variables for use in the txFunction
